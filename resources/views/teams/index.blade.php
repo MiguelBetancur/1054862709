@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 </head>
 <body> 
@@ -22,8 +22,8 @@
             </div>
             <div class="input-group mb-3">
                 <label class="input-group-text" for="is_active">Está Activo: </label>
-                <input type="radio" name="esta_activo" id="is_active">SI
-                <input type="radio" name="esta_activo" id="is_active">NO
+                <input type="radio" id="is_active" name="esta_activo" value="True">SI
+                <input type="radio" id="is_active" name="esta_activo" value="False">NO
             </div>
             <button type="submit" class="btn btn-primary">Guardar equipo</button>
         </form>
