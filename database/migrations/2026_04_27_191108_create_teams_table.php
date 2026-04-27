@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('created_date');
-            $table->boolean('is_active');
+            $table->string('is_active');
             $table->softDeletes();
             $table->timestamps();
         });

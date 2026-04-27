@@ -41,8 +41,8 @@
                     <tr>
                         <td>{{ $team->id }}</td>
                         <td>{{ $team->name }}</td>
-                        <td>{{ $team->email }}</td> 
-                        <td>{{ $team->role_id }}</td>
+                        <td>{{ $team->created_date }}</td> 
+                        <td>{{ $team->is_active }}</td>
                         <td>
                             <a href="{{route('teams.edit', $team->id)}}" class="btn btn-warning">Edit</a>
                             <form action="{{route('teams.destroy', $team->id)}}" method="post">
