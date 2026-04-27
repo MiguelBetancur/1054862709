@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\MOdels\Post;
+use Illuminate\Database\Eloquent\Team;
 
-class PostController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view ('posts.index', compact('posts'));
+        $teams=Team::all();
+        return view('teams.index', compact('teams'));
     }
 
     /**
@@ -36,7 +36,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = new Team;
+        $team->name=$request->nombre;
+        $team->created_date=$request->fecha_creada;
+        $team->is_active=$request->esta_activo;
+        $team->save();
+        return redirect()->route('teams.index');
     }
 
     /**
@@ -58,7 +63,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $team = Team::find($id);
+        return redirect('teams.edit', compact('teams'));
     }
 
     /**
@@ -70,7 +76,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $team=Team::find($id);
+        $team->name=$request->nombre;
+        $team->created_date=$request->fecha_creada;
+        $team->is_active=$request->esta_activo;
+        $team->save();
+        return redirect()->route('teams.index');
     }
 
     /**
@@ -81,6 +92,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $team = Team::find($id);
+        $team->delete();
+        return redirect()->route('teams.index');
     }
 }

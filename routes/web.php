@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\TeamController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
-Route::put('/posts', [PostController::class, 'update'])->name('update.index');
-Route::get('/posts/{id}', [PostController::class, 'edit'])->name('posts.edit');
-Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+Route::post('/teams', [TeamController::class, 'store'])->name('teams.store');
+Route::delete('/teams/{id}', [TeamController::class, 'destroy'])->name('teams.destroy');
+Route::get('/teams/{id}', [TeamController::class, 'edit'])->name('teams.edit');
+Route::put('/teams', [TeamController::class, 'update'])->name('teams.index');
+//Route::get('/teams/{id}', [TeamController::class, 'show'])->name('teams.show');
