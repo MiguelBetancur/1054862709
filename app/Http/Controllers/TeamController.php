@@ -39,10 +39,10 @@ class TeamController extends Controller
         $team = new Team;
         $team->name=$request->nombre;
         $team->created_date=$request->fecha_creada;
-        if ($team->is_active.value == 'Si') {
-            $team->is_active=true;
+        if ($team->is_active== 'Si') {
+            $team->is_active=True;
         }else{
-            $team->is_active=false;
+            $team->is_active=False;
         }
         $team->is_active=$request->esta_activo;
         $team->save();
