@@ -16,7 +16,7 @@ class ValidarPersonas
     public function handle(Request $request, Closure $next): Response
     {
         $total = User::count();
-        $mas = User::where('birthdate', '>', '2016-15-05')->count();
+        $mas = User::where('birthday', '>', '2016-15-05')->count();
 
         if($total > 10 && $mas > 10 ){
             return $next($request);
